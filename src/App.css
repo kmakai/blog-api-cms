@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .App {
+    @apply h-screen;
+  }
+
+  .header {
+    @apply flex items-center justify-between py-2 px-4 border shadow-sm;
+  }
+
+  .header h1 {
+    @apply text-3xl font-bold bg-black text-white p-3 rounded-lg tracking-wide;
+  }
+
+  .nav {
+    @apply text-2xl flex gap-4 font-semibold;
+  }
+
+  .nav a {
+    @apply border-2 border-slate-800 py-2 px-4 rounded-lg hover:text-white hover:bg-slate-800;
+  }
+}
