@@ -1,19 +1,35 @@
 import axios from "axios";
 
 // get posts from api
-export const getPosts = async () => {
-  const response = await axios.get(`http://localhost:5000/api/posts`);
+export const getPosts = async (token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  const response = await axios.get(
+    `http://localhost:5000/api/posts/author`,
+    config
+  );
 
-  console.log(response.data);
   return response.data;
 };
 
 // get single post
-export const getPost = async (id) => {
+export const getPost = async (id, token) => {
   console.log(id);
-  const response = await axios.get(`http://localhost:5000/api/posts/${id}`);
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
 
-  console.log(response.data);
+  const response = await axios.get(
+    `http://localhost:5000/api/posts/${id}`,
+    config
+  );
+
+  console.log(response);
   return response.data;
 };
 

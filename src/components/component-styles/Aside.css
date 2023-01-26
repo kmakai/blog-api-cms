@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .aside {
+    @apply col-auto flex flex-col items-center border-r gap-4;
+  }
+
+  .aside-nav {
+    @apply flex flex-col gap-5 mt-4;
+  }
+
+  .aside-link {
+    @apply text-lg font-bold text-blue-600 hover:text-slate-800 flex flex-col items-start justify-center uppercase;
+  }
+
+  .aside-link-bar {
+    @apply border opacity-0 group-hover:opacity-100 border-slate-800 rounded-full w-full;
+  }
+
+  .active {
+    @apply opacity-100 border-slate-800 text-slate-800;
+  }
+}

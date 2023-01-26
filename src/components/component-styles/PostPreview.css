@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .post-card {
+    @apply border p-6 rounded-lg shadow-sm flex flex-col gap-y-4;
+  }
+
+  .card-title {
+    @apply text-slate-800 text-xl border-b-2;
+  }
+
+  .card-body {
+    @apply text-slate-700 text-ellipsis;
+  }
+
+  .card-buttons {
+    @apply flex items-center justify-between mt-10;
+  }
+
+  .card-buttons button {
+    @apply border-2 rounded-lg py-2 px-4 font-bold;
+  }
+
+  .btn-edit {
+    @apply border-slate-800 text-white bg-slate-800 hover:bg-white hover:text-slate-800;
+  }
+
+  .btn-view {
+    @apply border-slate-800 hover:bg-slate-800 hover:text-white;
+  }
+
+  .btn-unpublish {
+    @apply border-red-600 text-white bg-red-600 hover:text-red-600 hover:bg-white;
+  }
+
+  .btn-publish {
+    @apply border-emerald-500 bg-emerald-500 text-white hover:bg-emerald-700;
+  }
+}

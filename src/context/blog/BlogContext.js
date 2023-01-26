@@ -10,6 +10,7 @@ export const BlogProvider = ({ children }) => {
     posts: [],
     post: null,
     comments: [],
+    comment: null,
   };
 
   const [state, dispatch] = useReducer(BlogReducer, initialState);

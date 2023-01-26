@@ -8,7 +8,7 @@
   }
 
   .login-card h2 {
-    @apply text-2xl font-bold;
+    @apply text-3xl font-bold text-slate-700;
   }
 
   .login-fields {
@@ -28,7 +28,7 @@
   }
 
   .login-fields input {
-    @apply placeholder:text-left focus:outline-none border-b p-2 text-slate-800;
+    @apply placeholder:text-left focus:outline-none border-b p-2 text-slate-800 font-[500] tracking-wider;
   }
 
   .login-btn {
