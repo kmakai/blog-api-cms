@@ -10,6 +10,7 @@ import Posts from "./pages/Posts";
 import Post from "./pages/Post";
 import PublishedPosts from "./pages/PublishedPosts";
 import UnpublishedPosts from "./pages/UnpublishedPosts";
+import EditComment from "./pages/EditComment";
 
 function App() {
   return (
@@ -24,6 +25,10 @@ function App() {
                 <Route element={<PrivateRoute />}>
                   <Route path="/" element={<Posts />} />
                   <Route path="/posts/:postId" element={<Post />} />
+                  <Route
+                    path="/posts/:postId/comments/:commentId"
+                    element={<EditComment />}
+                  />
                   <Route path="/published-posts" element={<PublishedPosts />} />
                   <Route
                     path="/unpublished-posts"

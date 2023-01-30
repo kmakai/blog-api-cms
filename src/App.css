@@ -4,11 +4,11 @@
 
 @layer base {
   .App {
-    @apply flex flex-col;
+    @apply flex flex-col h-full;
   }
 
   .main-aside {
-    @apply grid grid-cols-6 flex-none;
+    @apply grid grid-cols-6 flex-1 grid-rows-1;
   }
 
   main {

@@ -4,9 +4,9 @@
 
 @layer base {
   body {
-    @apply h-auto;
+    @apply h-screen;
   }
   #root {
-    @apply h-screen;
+    @apply h-full;
   }
 }

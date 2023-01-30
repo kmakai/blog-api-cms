@@ -1,6 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function Comment({ comment }) {
+  const navigate = useNavigate();
+
   return (
     <div className="post-comment">
       <div className="comment-info">
@@ -12,7 +15,12 @@ function Comment({ comment }) {
       <p className="comment-text">{comment.text}</p>
       <hr />
       <div className="comment-btns">
-        <button className="comment-edit">Edit</button>
+        <button
+          className="comment-edit"
+          onClick={() => navigate(`comments/${comment._id}`)}
+        >
+          Edit
+        </button>
         <button className="comment-delete">Delete</button>
       </div>
     </div>

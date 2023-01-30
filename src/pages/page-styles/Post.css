@@ -4,7 +4,7 @@
 
 @layer base {
   .single-post-page {
-    @apply flex flex-col mx-auto mt-5 w-[90%] gap-y-5;
+    @apply flex flex-col mx-auto my-5 w-[90%] gap-y-5 h-auto;
   }
 
   .post {
@@ -40,7 +40,7 @@
   }
 
   .comments-container {
-    @apply flex flex-col gap-y-5;
+    @apply flex flex-col gap-y-5 h-full;
   }
 
   .post-comment {
