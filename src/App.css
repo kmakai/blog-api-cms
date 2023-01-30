@@ -4,14 +4,18 @@
 
 @layer base {
   .App {
-    @apply h-screen;
+    @apply flex flex-col;
   }
 
   .main-aside {
-    @apply grid grid-cols-6 h-[100%];
+    @apply grid grid-cols-6 flex-none;
   }
 
   main {
-    @apply col-span-5;
+    @apply col-span-5 h-full;
+  }
+
+  .aside {
+    @apply h-full;
   }
 }

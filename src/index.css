@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+  body {
+    @apply h-auto;
+  }
   #root {
     @apply h-screen;
   }

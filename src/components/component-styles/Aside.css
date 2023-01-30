@@ -4,7 +4,7 @@
 
 @layer base {
   .aside {
-    @apply col-auto flex flex-col items-center border-r gap-4;
+    @apply col-auto flex flex-col items-center border-r gap-4 h-full;
   }
 
   .aside-nav {

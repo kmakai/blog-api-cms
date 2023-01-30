@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .single-post-page {
+    @apply flex flex-col mx-auto mt-5 w-[90%] gap-y-5;
+  }
+
+  .post {
+    @apply flex flex-col gap-y-2;
+  }
+
+  .post-title {
+    @apply text-2xl underline font-bold tracking-widest text-slate-900;
+  }
+  .post-detail {
+    @apply italic text-slate-600;
+  }
+
+  .post-body {
+    @apply text-slate-800 border-b;
+  }
+
+  .comment-form-container form {
+    @apply flex flex-col gap-y-2;
+  }
+
+  .comment-form-container form h4,
+  .post-comments-title {
+    @apply text-lg text-slate-700;
+  }
+
+  .comment-form-container form textarea {
+    @apply border-2 rounded-lg p-4 w-1/2 focus:outline-none;
+  }
+
+  .comment-form-container form button {
+    @apply border border-slate-800 text-white font-bold bg-slate-800 self-start py-2 px-3 rounded-lg hover:bg-white hover:text-slate-800;
+  }
+
+  .comments-container {
+    @apply flex flex-col gap-y-5;
+  }
+
+  .post-comment {
+    @apply flex flex-col gap-y-2 border border-slate-400 p-4 rounded-xl;
+  }
+
+  .comment-info {
+    @apply flex gap-x-2;
+  }
+
+  .comment-text {
+    @apply text-slate-700;
+  }
+
+  .comment-btns {
+    @apply flex gap-x-20;
+  }
+
+  .comment-btns button {
+    @apply border-2 rounded-lg py-2 px-4 font-bold;
+  }
+
+  .comment-edit {
+    @apply border-slate-800 text-white bg-slate-800 hover:bg-white hover:text-slate-800;
+  }
+
+  .comment-delete {
+    @apply border-red-600 text-white bg-red-600 hover:text-red-600 hover:bg-white;
+  }
+}

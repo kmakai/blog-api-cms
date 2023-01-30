@@ -3,7 +3,7 @@ import "./component-styles/Aside.css";
 import BlogContext from "../context/blog/BlogContext";
 
 function Aside() {
-  const { user, dispatch } = useContext(BlogContext);
+  const { user } = useContext(BlogContext);
 
   return (
     <aside className="aside">
@@ -13,11 +13,11 @@ function Aside() {
             All posts
             <div className="aside-link-bar"></div>
           </a>
-          <a href="##" className="aside-link group">
+          <a href="/published-posts" className="aside-link group">
             Published posts
             <div className="aside-link-bar"></div>
           </a>
-          <a href="##" className="aside-link group">
+          <a href="/unpublished-posts" className="aside-link group">
             Unpublished posts
             <div className="aside-link-bar"></div>
           </a>

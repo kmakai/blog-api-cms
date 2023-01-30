@@ -1,3 +1,4 @@
+import "./page-styles/Post.css";
 import React from "react";
 import { useContext, useEffect } from "react";
 import BlogContext from "../context/blog/BlogContext";
@@ -26,21 +27,21 @@ function Post() {
     };
 
     loadPost();
-  }, [dispatch, postId]);
+  }, [dispatch, postId, user.token]);
 
   if (post === null) return <p>Loading...</p>;
 
   return (
     <div className="single-post-page">
       <div className="post">
-        <h2>{post.title}</h2>
-        <p>
+        <h2 className="post-title">{post.title}</h2>
+        <p className="post-detail">
           Posted: {post.createdAt.split("T")[0]} by: {post.author.name}{" "}
         </p>
-        <p>{post.text}</p>
+        <p className="post-body">{post.text}</p>
+        {user && <CommentForm />}
       </div>
-      {user && <CommentForm />}
-      <h3>Comments:</h3>
+      <h3 className="post-comments-title">Comments:</h3>
       <Comments comments={comments} />
     </div>
   );
