@@ -21,7 +21,7 @@ function Aside() {
             Unpublished posts
             <div className="aside-link-bar"></div>
           </a>
-          <a href="##" className="aside-link group">
+          <a href="/newpost" className="aside-link group">
             Create new post
             <div className="aside-link-bar"></div>
           </a>

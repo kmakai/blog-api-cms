@@ -18,7 +18,6 @@ export const getPosts = async (token) => {
 
 // get single post
 export const getPost = async (id, token) => {
-  console.log(id);
   const config = {
     headers: {
       Authorization: `Bearer ${token}`,
@@ -30,21 +29,80 @@ export const getPost = async (id, token) => {
     config
   );
 
-  console.log(response);
+  return response.data;
+};
+
+// submit post
+export const submitPost = async (data, token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  const response = await axios.post(
+    `http://localhost:5000/api/posts`,
+    data,
+    config
+  );
+
+  return response.data;
+};
+
+// update post
+export const updatePost = async (data, token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  const response = await axios.put(
+    `http://localhost:5000/api/posts/${data.id}`,
+    data,
+    config
+  );
+
+  return response.data;
+};
+
+export const updatePostPublishStatus = async (data, token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  const response = await axios.put(
+    `http://localhost:5000/api/posts/${data._id}`,
+    data,
+    config
+  );
+
+  return response.data;
+};
+
+export const deletePost = async (postId, token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  const response = await axios.delete(
+    `http://localhost:5000/api/posts/${postId}`,
+    config
+  );
+
   return response.data;
 };
 
 // get post comments
 export const getPostComments = async (id) => {
-  console.log(id);
   const response = await axios.get(
     `http://localhost:5000/api/posts/${id}/comments`
   );
 
-  console.log(response.data);
   return response.data;
 };
 
+// add a comment
 export const postComment = async (id, text, token) => {
   const config = {
     headers: {
@@ -73,10 +131,10 @@ export const getComment = async (postId, commentId, token) => {
     config
   );
 
-  console.log(response);
   return response.data;
 };
 
+// update/edit a comment
 export const updateComment = async (postId, commentId, text, token) => {
   const config = {
     headers: {
@@ -86,6 +144,21 @@ export const updateComment = async (postId, commentId, text, token) => {
   const response = await axios.put(
     `http://localhost:5000/api/posts/${postId}}/comments/${commentId}`,
     { text },
+    config
+  );
+
+  return response.data;
+};
+
+// delete a comment
+export const deleteComment = async (postId, commentId, token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  const response = await axios.delete(
+    `http://localhost:5000/api/posts/${postId}}/comments/${commentId}`,
     config
   );
 

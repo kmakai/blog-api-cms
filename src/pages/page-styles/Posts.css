@@ -3,7 +3,14 @@
 @tailwind utilities;
 
 @layer base {
+  .posts-page {
+    @apply text-center p-2;
+  }
+
+  .posts-page > p {
+    @apply text-red-600 uppercase text-sm;
+  }
   .posts-container {
-    @apply grid grid-cols-3 gap-4 m-4 grid-flow-row;
+    @apply grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 m-4 grid-flow-row text-center;
   }
 }

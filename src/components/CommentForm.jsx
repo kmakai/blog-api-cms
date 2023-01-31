@@ -28,7 +28,7 @@ function CommentForm() {
   };
   return (
     <div className="comment-form-container">
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit} className="form">
         <h4>Leave a comment:</h4>
         <textarea
           name="text"

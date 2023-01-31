@@ -12,7 +12,7 @@
   }
 
   .card-body {
-    @apply text-slate-700 text-ellipsis;
+    @apply text-slate-700 truncate;
   }
 
   .card-buttons {

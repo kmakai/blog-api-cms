@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .new-post-page {
+    @apply h-full py-2 px-8;
+  }
+
+  .new-post-page h3 {
+    @apply text-2xl font-bold text-center mt-2;
+  }
+
+  .post-form {
+    @apply flex flex-col gap-y-5 mt-6 mx-auto border h-auto p-4 rounded-lg;
+  }
+
+  .field {
+    @apply flex flex-col;
+  }
+
+  .field label {
+    @apply text-lg text-slate-600;
+  }
+
+  .field #title {
+    @apply p-2 border rounded-md focus:outline-none text-xl text-slate-700 italic tracking-wider w-1/2;
+  }
+
+  .field #text {
+    @apply focus:outline-none border rounded-md p-2 text-slate-900 tracking-wide;
+  }
+
+  .post-btn {
+    @apply border-2 self-center py-4 px-8 rounded-xl border-slate-800 text-2xl font-bold text-white bg-slate-800 hover:text-slate-800 hover:bg-white;
+  }
+}

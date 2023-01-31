@@ -1,9 +1,26 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useContext } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { deleteComment, getPostComments } from "../context/blog/BlogActions";
+import BlogContext from "../context/blog/BlogContext";
 
 function Comment({ comment }) {
   const navigate = useNavigate();
+  const { postId } = useParams();
+  const { user, dispatch } = useContext(BlogContext);
 
+  const onDelete = async (postid, commentid, token) => {
+    try {
+      const res = await deleteComment(postid, commentid, token);
+      console.log(res);
+      const comments = await getPostComments(postId);
+      dispatch({
+        type: "GET_COMMENTS",
+        payload: comments,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <div className="post-comment">
       <div className="comment-info">
@@ -21,7 +38,12 @@ function Comment({ comment }) {
         >
           Edit
         </button>
-        <button className="comment-delete">Delete</button>
+        <button
+          className="comment-delete"
+          onClick={() => onDelete(postId, comment._id, user.token)}
+        >
+          Delete
+        </button>
       </div>
     </div>
   );

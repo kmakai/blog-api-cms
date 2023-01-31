@@ -16,7 +16,6 @@ function EditCommentForm() {
   useEffect(() => {
     const loadComment = async () => {
       const comment = await getComment(postId, commentId, user.token);
-      console.log(comment);
 
       dispatch({
         type: "GET_COMMENT",
@@ -38,8 +37,7 @@ function EditCommentForm() {
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await updateComment(postId, commentId, text, user.token);
-      console.log(res);
+      await updateComment(postId, commentId, text, user.token);
       const comments = await getPostComments(postId);
       dispatch({
         type: "GET_COMMENTS",

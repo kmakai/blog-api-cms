@@ -46,6 +46,7 @@ function Login() {
             placeholder="Enter your email"
             value={email}
             onChange={onChange}
+            required
           />
         </label>
         <label htmlFor="password" className="password-label">
@@ -57,6 +58,7 @@ function Login() {
             placeholder="password"
             value={password}
             onChange={onChange}
+            required
           />
         </label>
 

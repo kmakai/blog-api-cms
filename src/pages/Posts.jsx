@@ -23,6 +23,7 @@ function Posts() {
 
   return (
     <div className="posts-page">
+      <p>Must view post to delete !!!</p>
       <div className="posts-container">
         {posts.map((post) => {
           return <PostPreview post={post} key={post._id} />;

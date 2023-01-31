@@ -4,7 +4,7 @@
 
 @layer base {
   .header {
-    @apply flex items-center justify-between py-2 px-4 border shadow-sm;
+    @apply flex items-center justify-between py-2 px-4 border shadow-sm sticky top-0 bg-white z-10;
   }
 
   .header h1 {
