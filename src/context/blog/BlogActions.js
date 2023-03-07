@@ -1,5 +1,5 @@
 import axios from "axios";
-
+const apiUrl = "https://express-blog-api-production-ca87.up.railway.app";
 // POST ACTIONS ///
 // get posts from api
 export const getPosts = async (token) => {
@@ -8,10 +8,7 @@ export const getPosts = async (token) => {
       Authorization: `Bearer ${token}`,
     },
   };
-  const response = await axios.get(
-    `http://localhost:5000/api/posts/author`,
-    config
-  );
+  const response = await axios.get(`${apiUrl}/api/posts/author`, config);
 
   return response.data;
 };
@@ -24,10 +21,7 @@ export const getPost = async (id, token) => {
     },
   };
 
-  const response = await axios.get(
-    `http://localhost:5000/api/posts/${id}`,
-    config
-  );
+  const response = await axios.get(`${apiUrl}/api/posts/${id}`, config);
 
   return response.data;
 };
@@ -39,11 +33,7 @@ export const submitPost = async (data, token) => {
       Authorization: `Bearer ${token}`,
     },
   };
-  const response = await axios.post(
-    `http://localhost:5000/api/posts`,
-    data,
-    config
-  );
+  const response = await axios.post(`${apiUrl}/api/posts`, data, config);
 
   return response.data;
 };
@@ -56,7 +46,7 @@ export const updatePost = async (data, token) => {
     },
   };
   const response = await axios.put(
-    `http://localhost:5000/api/posts/${data.id}`,
+    `${apiUrl}/api/posts/${data.id}`,
     data,
     config
   );
@@ -71,7 +61,7 @@ export const updatePostPublishStatus = async (data, token) => {
     },
   };
   const response = await axios.put(
-    `http://localhost:5000/api/posts/${data._id}`,
+    `${apiUrl}/api/posts/${data._id}`,
     data,
     config
   );
@@ -85,19 +75,14 @@ export const deletePost = async (postId, token) => {
       Authorization: `Bearer ${token}`,
     },
   };
-  const response = await axios.delete(
-    `http://localhost:5000/api/posts/${postId}`,
-    config
-  );
+  const response = await axios.delete(`${apiUrl}/api/posts/${postId}`, config);
 
   return response.data;
 };
 
 // get post comments
 export const getPostComments = async (id) => {
-  const response = await axios.get(
-    `http://localhost:5000/api/posts/${id}/comments`
-  );
+  const response = await axios.get(`${apiUrl}/api/posts/${id}/comments`);
 
   return response.data;
 };
@@ -110,7 +95,7 @@ export const postComment = async (id, text, token) => {
     },
   };
   const response = await axios.post(
-    `http://localhost:5000/api/posts/${id}/comments`,
+    `${apiUrl}/api/posts/${id}/comments`,
     { text },
     config
   );
@@ -127,7 +112,7 @@ export const getComment = async (postId, commentId, token) => {
   };
 
   const response = await axios.get(
-    `http://localhost:5000/api/posts/${postId}/comments/${commentId}`,
+    `${apiUrl}/api/posts/${postId}/comments/${commentId}`,
     config
   );
 
@@ -142,7 +127,7 @@ export const updateComment = async (postId, commentId, text, token) => {
     },
   };
   const response = await axios.put(
-    `http://localhost:5000/api/posts/${postId}}/comments/${commentId}`,
+    `${apiUrl}/api/posts/${postId}}/comments/${commentId}`,
     { text },
     config
   );
@@ -158,7 +143,7 @@ export const deleteComment = async (postId, commentId, token) => {
     },
   };
   const response = await axios.delete(
-    `http://localhost:5000/api/posts/${postId}}/comments/${commentId}`,
+    `${apiUrl}/api/posts/${postId}}/comments/${commentId}`,
     config
   );
 
@@ -167,10 +152,7 @@ export const deleteComment = async (postId, commentId, token) => {
 
 // logIn
 export const login = async (formData) => {
-  const response = await axios.post(
-    "http://localhost:5000/api/users/login",
-    formData
-  );
+  const response = await axios.post(`${apiUrl}/api/users/login`, formData);
 
   if (response.data) {
     localStorage.setItem("user", JSON.stringify(response.data));
